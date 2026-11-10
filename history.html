@@ -8,7 +8,7 @@
 .summary{background:#fff;border:1px solid #bdcbd3;border-radius:6px;box-shadow:0 2px 3px #132d3c12;color:#283e4a;min-height:160px;padding:28px 34px}.summary span{font-size:22px;font-weight:700}.summary strong{color:#c62828;font-size:clamp(54px,7vw,88px);line-height:1;font-weight:800;text-shadow:none}@media(max-width:520px){.summary{padding:24px 18px;min-height:145px}.summary span{font-size:18px}.summary strong{font-size:clamp(48px,13vw,70px);margin-top:12px}}
 </style>
 </head>
-<body><header><h1>歷史資料｜鮭魚秤重 HMI</h1><p>秤重紀錄查詢與小計標籤預覽 · DEMO</p></header>
+<body><header><h1>歷史資料｜鮭魚秤重 HMI</h1><p>過磅紀錄查詢 · DEMO</p></header>
 <main class="wrap">
 <nav class="nav"><a href="index.html">現場操作</a><a href="weighing-admin.html">主管管理</a><a class="active" href="history.html">歷史資料</a></nav>
 <section class="card"><h2>篩選歷史紀錄</h2><div class="filters"><label class="field">開始日期<input id="dateFrom" type="date"></label><label class="field">結束日期<input id="dateTo" type="date"></label><label class="field">工單號<input id="orderFilter" placeholder="輸入完整或部分工單號"></label><label class="field">成品<select id="productFilter"><option value="">全部成品</option></select></label></div><div class="filter-actions"><button class="btn search" id="searchBtn">搜尋</button></div><p class="hint">現場操作每秒產生的 DEMO 紀錄也會顯示在此瀏覽器的歷史資料中。</p></section>
@@ -36,6 +36,7 @@ function render(){const body=$('rows');body.replaceChildren();if(!shown.length){
 $('searchBtn').onclick=()=>{const from=$('dateFrom').value,to=$('dateTo').value,order=$('orderFilter').value.trim(),product=$('productFilter').value;if(from&&to&&from>to){alert('開始日期不可晚於結束日期');return}shown=records.filter(r=>(!from||r.at.slice(0,10)>=from)&&(!to||r.at.slice(0,10)<=to)&&(!order||r.order.includes(order))&&(!product||r.product===product));render()};
 window.addEventListener('storage',event=>{if(event.key==='weighingDemoHistory'){records=[...savedRecords(),...demoRecords];$('searchBtn').click()}});render();
 </script></body></html>
+
 
 
 
