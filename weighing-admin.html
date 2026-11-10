@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>主管管理｜主檔維護</title>
+  <style>
+    :root{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;color:#172b3a;background:#f4f7f9}*{box-sizing:border-box}body{margin:0}header{background:#123b50;color:white;padding:22px max(24px,calc((100vw - 1180px)/2))}header h1{font-size:24px;margin:0 0 5px}header p{margin:0;color:#c8dce4;font-size:14px}.wrap{max-width:1180px;margin:28px auto;padding:0 20px}.steps{display:flex;gap:10px;margin-bottom:20px}.step{flex:1;background:#e5eef2;padding:12px 16px;border-radius:10px;color:#55717f;font-weight:bold}.step.active{background:#d5ece6;color:#08745d}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.card{background:#fff;border:1px solid #dbe5ea;border-radius:14px;box-shadow:0 5px 18px #123b500a;padding:22px;margin-bottom:20px}h2{font-size:18px;margin:0 0 16px}h3{font-size:15px;margin:0 0 12px}.muted{color:#6e8390;font-size:13px;line-height:1.6}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}.tab{border:1px solid #cbdbe2;background:#f5f9fa;color:#456271;padding:9px 13px;border-radius:8px;cursor:pointer}.tab.active{background:#126b80;color:#fff;border-color:#126b80}.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:bold}.field.wide{grid-column:1/-1}input,select{width:100%;height:40px;border:1px solid #cbd9df;border-radius:8px;padding:8px 10px;font:inherit;background:#fff;color:#172b3a}input:focus,select:focus{outline:2px solid #8ed1ca;border-color:#188c7c}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}button{font:inherit;cursor:pointer}button.primary{border:0;background:#087d6b;color:#fff;padding:10px 17px;border-radius:8px;font-weight:bold}button.secondary{border:1px solid #bdd1d7;background:white;color:#245164;padding:9px 16px;border-radius:8px;font-weight:bold}button:disabled{opacity:.45;cursor:not-allowed}.items{margin:15px 0 0;padding:0;list-style:none;max-height:150px;overflow:auto}.items li{border-top:1px solid #edf1f3;padding:9px 0;font-size:13px}.weight{border:1px solid #bdd9d1;background:#eff9f4;border-radius:12px;padding:18px;text-align:center;margin-top:16px}.weight strong{display:block;font-size:42px;color:#08745d;letter-spacing:1px}.weight small{color:#668277}.message{min-height:20px;margin:10px 0 0;color:#08745d;font-size:13px}.label{background:white;border:2px solid #222;width:100%;max-width:460px;aspect-ratio:1/1;padding:9px 11px;color:#262626;font-family:"Microsoft JhengHei",sans-serif;font-size:clamp(11px,1.15vw,14px);line-height:1.52;position:relative;overflow:hidden}.label-row{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.label .main-weight{position:absolute;right:7%;top:17%;font-size:clamp(25px,3vw,40px);font-weight:500;background:white}.label .barcode{height:47px;width:45%;margin:6px 3% 0 auto;background:repeating-linear-gradient(90deg,#111 0 2px,#fff 2px 3px,#111 3px 4px,#fff 4px 7px,#111 7px 11px,#fff 11px 13px);}.barcode-num{text-align:right;margin-right:5%;font-size:9px;letter-spacing:.5px}.label-footer{margin-top:8px}.preview-note{margin-top:12px}.smallprint{font-size:12px;color:#70848e;margin-top:10px}@media(max-width:850px){.grid{grid-template-columns:1fr}.label{font-size:13px}.label .main-weight{font-size:34px}}@media(max-width:520px){.steps{flex-direction:column}.form{grid-template-columns:1fr}.label{font-size:11px}.label .main-weight{font-size:27px}}@media print{body{background:white}header,.steps,.left,.preview-title,.preview-note,.smallprint{display:none!important}.wrap,.grid,.card{margin:0;padding:0;display:block;border:0;box-shadow:none}.label{width:100mm;height:100mm;max-width:none;font-size:10pt;aspect-ratio:auto}.label .main-weight{font-size:27pt} @page{size:110mm 110mm;margin:5mm}}
+  .grid{display:block}.left,.right{max-width:800px}.control-actions{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-top:16px}.control-buttons{display:flex;gap:9px}.stop-button{border:1px solid #c57373;background:#fff;color:#a13232;padding:9px 16px;border-radius:8px;font-weight:bold}.page-nav{display:flex;gap:10px;margin-bottom:18px}.page-nav a{padding:10px 18px;border-radius:8px;background:white;border:1px solid #cbdbe2;color:#245164;text-decoration:none;font-weight:bold}.page-nav a.current{background:#126b80;color:white;border-color:#126b80}body.operator .admin-only,body.admin .operator-only{display:none}body.admin .grid{display:block}body.admin .left{max-width:800px}body.admin .steps{display:none}body.admin .smallprint{display:none}@media print{.grid{display:block}.left,.right{max-width:800px}.control-actions{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-top:16px}.control-buttons{display:flex;gap:9px}.stop-button{border:1px solid #c57373;background:#fff;color:#a13232;padding:9px 16px;border-radius:8px;font-weight:bold}.page-nav{display:none!important}}</style>
+<style>
+/* HMI touch layout */
+:root{font-family:'Microsoft JhengHei','Noto Sans TC',sans-serif;color:#182634;background:#e9eef2}
+body{background:#e9eef2}
+header{background:#152c3c;border-bottom:5px solid #ef9b42;padding-top:18px;padding-bottom:18px}
+header h1{font-size:28px;letter-spacing:.04em}
+header p{color:#b8c8d2}
+.wrap{max-width:1280px;margin:20px auto}
+.page-nav a{min-width:145px;text-align:center;font-size:17px;border-radius:4px;padding:13px 20px}
+.page-nav a.current{background:#245f80;border-color:#245f80}
+.steps{gap:8px}.step{border-radius:4px;background:#dbe3e8;color:#315365;font-size:15px}.step.active{background:#cfe6de;color:#136453}
+.left,.right,body.admin .left{max-width:none}
+.card{border:1px solid #bdcbd3;border-radius:6px;box-shadow:0 2px 3px #132d3c12;padding:24px;margin-bottom:16px}
+h2{font-size:22px;border-left:6px solid #ee9b42;padding-left:12px;margin-bottom:20px}
+.form{gap:16px 20px}.field{font-size:16px;color:#283e4a;gap:8px}
+input,select{height:56px;border:2px solid #b7c8d1;border-radius:4px;font-size:18px;padding:8px 14px}
+input:disabled{background:#e2e9ec;color:#697d88}
+.weight{background:#101f28;border:3px solid #3d6273;border-radius:6px;min-height:214px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:24px}
+.weight small{color:#a9c0ca;font-size:16px}.weight strong{font-family:Consolas,'Microsoft JhengHei',monospace;color:#88edb5;font-size:clamp(58px,10vw,112px);line-height:1.25;font-variant-numeric:tabular-nums;text-shadow:0 0 18px #48e39c55}
+.weight.running{border-color:#2eaf72;box-shadow:inset 0 0 0 2px #2eaf7255}
+.control-actions{margin-top:20px}.control-actions .field{min-width:230px!important}.control-buttons button{min-width:154px;min-height:66px;font-size:23px;border-radius:5px}
+button.primary{background:#148454}button.primary:hover:not(:disabled){background:#0b6b42}.stop-button{background:#bd4040;color:white;border-color:#bd4040}.stop-button:hover:not(:disabled){background:#a32f2f}
+.tab{min-height:48px;font-size:16px}.actions button{min-height:48px;font-size:16px}
+.items{max-height:300px}.items li{padding:12px 0;font-size:15px}
+.message{font-size:16px;font-weight:bold;min-height:28px}.label{max-width:520px;font-size:15px}.label .main-weight{font-size:42px}
+.preview-note{font-size:14px}.smallprint{font-size:13px}
+@media(max-width:650px){.card{padding:16px}.control-actions{align-items:stretch;flex-direction:column}.control-buttons button{flex:1;min-width:0}.weight strong{font-size:58px}.form{grid-template-columns:1fr}.label{font-size:11px}.label .main-weight{font-size:27px}}
+@media print{body{background:white}.card{border:0;box-shadow:none;padding:0}.label{width:100mm;height:100mm;max-width:none;font-size:10pt}.label .main-weight{font-size:27pt}}
+</style>
+</head>
+<body class="admin">
+<header><h1>主管管理｜主檔維護</h1><p>操作流程模擬畫面 · HMI 操作模擬 · 資料保存在目前瀏覽器</p></header>
+<main class="wrap">
+  <nav class="page-nav"><a href="index.html">現場操作</a><a class="current" href="weighing-admin.html">主管管理</a></nav><div class="steps"><div class="step active">1　建立四種主檔</div><div class="step active">2　填寫工單並秤重</div><div class="step active">3　預覽與列印標籤</div></div>
+  <div class="grid"><div class="left">
+    <section class="card admin-only"><h2>主檔管理</h2><div class="tabs" id="tabs"></div><form id="masterForm"><div class="form" id="masterFields"></div><div class="actions"><button class="primary" type="submit">新增至主檔</button><button class="secondary" type="button" id="resetData">還原範例資料</button></div></form><ul class="items" id="masterItems"></ul></section>
+    <section class="card operator-only"><h2>工單與秤重</h2><div class="form"><label class="field wide">工單號<input id="workOrder" value="10040022" placeholder="例如：10040022"></label><label class="field">成品<select id="product"></select></label><label class="field">原物料<select id="material"></select></label><label class="field">品牌／供應商<select id="brand"></select></label><label class="field">漁場<select id="fishery"></select></label><label class="field">製造日期<input id="manufactured" type="date"></label><label class="field">批號<input id="lot" placeholder="例如：11062026"></label></div><div class="weight"><small>目前重量</small><strong id="weightDisplay">0.00 kg</strong><small id="scaleStatus">狀態：已停止</small></div><div class="control-actions"><label class="field" style="min-width:150px">手動重量（kg）<input id="weightInput" type="number" min="0" step="0.01" value="0" disabled></label><div class="control-buttons"><button class="primary" id="startWeight" type="button">開始</button><button class="stop-button" id="stopWeight" type="button" disabled>停止</button></div></div><p class="message" id="message" aria-live="polite"></p></section>
+  </div><div class="right"><section class="card operator-only"><h2 class="preview-title">標籤預覽</h2><div class="label" id="label"><div class="label-row">品號：<span id="l-code"></span></div><div class="label-row">品名：<span id="l-name"></span></div><div class="label-row">規格：<span id="l-spec"></span></div><div class="label-row">成分：鮭魚</div><div class="label-row">原產地：<span id="l-origin"></span></div><div class="label-row">製造日期：<span id="l-made"></span></div><div class="label-row">有效日期：<span id="l-expiry"></span></div><div class="label-row">保存條件：冷藏 7°C 以下</div><div class="label-row">批號：<span id="l-lot"></span></div><div class="main-weight"><span id="l-weight">0.00</span>kg</div><div class="barcode"></div><div class="barcode-num" id="l-barcode"></div><div class="label-row">工單：<span id="l-order"></span></div><div class="label-row">編碼：<span id="l-material"></span></div><div class="label-footer"><div class="label-row">國內負責廠商：<span id="l-company"></span></div><div class="label-row">服務專線：0800-012-000</div><div class="label-row">地址：台灣桃園市龜山區文化一路 45 號</div><div>拆封後請立即食用完畢。本產品含有魚類，有對產品過敏者請勿食用。</div></div></div><div class="actions"><button class="primary" id="print" type="button">列印標籤</button></div><p class="muted preview-note">標籤內容會隨表單更新。條碼區目前為版面示意；成分、保存條件、服務專線、地址及警語為範例文字。</p></section></div></div>
+  <p class="smallprint">本頁為前端操作模擬，未連接實際電子秤、資料庫或條碼產生器。</p>
+</main>
+<script>
+const configs={product:{title:'成品主檔',fields:[['code','品號'],['name','品名'],['spec','規格'],['shelfLife','效期（天數）']]},material:{title:'原物料號主檔',fields:[['code','品號'],['name','品名'],['spec','規格'],['origin','產地']]},brand:{title:'品牌主檔',fields:[['code','供應商代碼'],['name','供應商名稱']]},fishery:{title:'漁場主檔',fields:[['code','編碼'],['name','代號']]}};
+const defaults={product:[
+{code:'100003',name:'鮭魚清肉',spec:'二分切',shelfLife:'7'},
+{code:'100004',name:'鮭魚菲力',spec:'去皮去刺',shelfLife:'5'},
+{code:'100005',name:'鮭魚切片',spec:'每片約 200g',shelfLife:'5'},
+{code:'100006',name:'鮭魚腹肉',spec:'真空包裝',shelfLife:'6'},
+{code:'100007',name:'鮭魚魚排',spec:'厚切 2cm',shelfLife:'7'}],material:[
+{code:'100528057',name:'大西洋鮭魚',spec:'整尾原料',origin:'挪威'},
+{code:'100528058',name:'大西洋鮭魚',spec:'去頭去內臟',origin:'智利'},
+{code:'100528059',name:'銀鮭',spec:'冷藏原料',origin:'日本'},
+{code:'100528060',name:'紅鮭',spec:'冷凍原料',origin:'美國'},
+{code:'100528061',name:'大西洋鮭魚',spec:'魚腹原料',origin:'挪威'}],brand:[
+{code:'B001',name:'海洋鮮品有限公司'},
+{code:'B002',name:'北海水產股份有限公司'},
+{code:'B003',name:'鮮漁供應有限公司'},
+{code:'B004',name:'藍海食品股份有限公司'},
+{code:'B005',name:'極鮮貿易有限公司'}],fishery:[
+{code:'F001',name:'鮭魚漁場 A01'},
+{code:'F002',name:'鮭魚漁場 A02'},
+{code:'F003',name:'鮭魚漁場 B01'},
+{code:'F004',name:'鮭魚漁場 B02'},
+{code:'F005',name:'鮭魚漁場 C01'}]};
+let data;try{data=JSON.parse(localStorage.getItem('weighingDemoData'))||structuredClone(defaults)}catch{data=structuredClone(defaults)}for(const key of Object.keys(defaults)){data[key]??=[];for(const item of defaults[key]){if(!data[key].some(existing=>existing.code===item.code))data[key].push(item)}}localStorage.setItem('weighingDemoData',JSON.stringify(data));let active='product';const $=id=>document.getElementById(id);const save=()=>localStorage.setItem('weighingDemoData',JSON.stringify(data));const text=(id,value)=>$(id).textContent=value||'—';
+function renderMasters(){ $('tabs').innerHTML=Object.entries(configs).map(([key,c])=>`<button class="tab ${key===active?'active':''}" type="button" data-tab="${key}">${c.title}</button>`).join(''); $('masterFields').innerHTML=configs[active].fields.map(([key,label])=>`<label class="field">${label}<input name="${key}" ${key==='shelfLife'?'type="number" min="1" step="1"':'type="text"'} required></label>`).join(''); $('masterItems').replaceChildren(...data[active].map(item=>{const li=document.createElement('li');li.textContent=configs[active].fields.map(([k])=>item[k]).join('　·　');return li}));document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{active=b.dataset.tab;renderMasters()})}
+function renderSelects(){for(const key of Object.keys(configs)){const select=$(key),old=select.value;select.replaceChildren(...data[key].map((item,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=`${item.code}｜${item.name}`;return option}));if([...select.options].some(o=>o.value===old))select.value=old}updateLabel()}
+function formatDate(date){if(!(date instanceof Date)||isNaN(date))return 'YYYY.MM.DD';return `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`}
+function updateLabel(){const p=data.product[+$('product').value],m=data.material[+$('material').value],b=data.brand[+$('brand').value];const made=$('manufactured').value?new Date($('manufactured').value+'T12:00:00'):null;const expiry=made&&p?new Date(made.getTime()+Number(p.shelfLife||0)*86400000):null;const w=Math.max(0,Number($('weightInput').value)||0).toFixed(2);text('l-code',p?.code);text('l-name',p?.name);text('l-spec',p?.spec);text('l-origin',m?.origin);text('l-made',formatDate(made));text('l-expiry',formatDate(expiry));text('l-lot',$('lot').value);text('l-order',$('workOrder').value);text('l-material',m?.code);text('l-company',b?.name);text('l-weight',w);text('weightDisplay',w+' kg');text('l-barcode',(m?.code||'')+($('workOrder').value||''))}
+$('masterForm').onsubmit=e=>{e.preventDefault();const obj=Object.fromEntries(new FormData(e.target));if(data[active].some(x=>x.code===obj.code)){alert('此代碼已存在');return}data[active].push(obj);save();e.target.reset();renderMasters();renderSelects();$('message').textContent='主檔已新增'};
+$('resetData').onclick=()=>{data=structuredClone(defaults);save();renderMasters();renderSelects();$('message').textContent='已還原範例資料'};
+$('startWeight').onclick=()=>{$('weightInput').disabled=false;$('startWeight').disabled=true;$('stopWeight').disabled=false;$('scaleStatus').textContent='狀態：秤重中';$('message').textContent='已開始秤重，請輸入重量';$('weightInput').focus()};$('stopWeight').onclick=()=>{$('weightInput').disabled=true;$('startWeight').disabled=false;$('stopWeight').disabled=true;$('scaleStatus').textContent='狀態：已停止';$('message').textContent='秤重已停止'};
+document.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',updateLabel));$('print').onclick=()=>{if(!$('workOrder').value.trim()||Number($('weightInput').value)<=0){$('message').textContent='請輸入工單號並完成秤重後列印';return}window.print()};
+const today=new Date();$('manufactured').value=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;$('lot').value=`${String(today.getMonth()+1).padStart(2,'0')}${String(today.getDate()).padStart(2,'0')}${today.getFullYear()}`;renderMasters();renderSelects();
+</script>
+</body></html>
+
+
+
+
+
+
